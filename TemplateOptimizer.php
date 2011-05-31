@@ -65,7 +65,7 @@ class TemplateOptimizer extends StdClass
 				fwrite($jsFileHandle,$extrajs);
 				fclose($jsFileHandle);
 			}
-			$jsLink = $GLOBALS['config']->ffurl . '/ffAssets.php?js&asset='.$jsFileName; 
+			$jsLink =  '/cachedAssets.php?js&asset='.$jsFileName; 
 			$extrajs = "\n".'<script type="text/javascript" src="' . $jsLink .  '" ></script> '."\n";
 		
 		
@@ -106,7 +106,7 @@ class TemplateOptimizer extends StdClass
 				fwrite($cssFileHandle,$extracss);
 				fclose($cssFileHandle);
 			}
-			$cssLink = $GLOBALS['config']->ffurl . '/ffAssets.php?css&asset='.$cssFileName; 
+			$cssLink = '/cachedAssets.php?css&asset='.$cssFileName; 
 			$extracss = "\n".'<link rel="stylesheet" type="text/css" href="' . $cssLink .  '" /> '."\n";
 			
 			$html = str_replace("</head>", $extracss."</head>", $html);
